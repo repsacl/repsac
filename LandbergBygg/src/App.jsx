@@ -6,19 +6,13 @@ import InteractiveText from './Components/InteractiveText'
 import './App.css'
 
 
-import line1 from './assets/llline.svg'
-
 function App() {
 
   return (
     <>
       
-      <InteractiveText className="text-center mt-20 md:text-6xl text-3xl uppercase">Landberg Bygg AS</InteractiveText>
-      {/* <h1 className='text-center mt-20 md:text-6xl text-3xl uppercase'>landberg bygg as</h1> */}
-
-      {/* <div>
-        <img src={line1} alt='line' className='md:w-200 w-100 absolute -z-10' />
-      </div> */}
+      {/* <InteractiveText className="text-center mt-20 md:text-6xl text-3xl uppercase">Landberg Bygg AS</InteractiveText> */}
+      <h1 className='text-center mt-20 md:text-6xl text-3xl uppercase'>landberg bygg as</h1>
 
       <div className='flex justify-center items-center md:h-200 h-125'>
         <ReavelText className='md:text-3xl text-lg md:w-200 w-100'>
