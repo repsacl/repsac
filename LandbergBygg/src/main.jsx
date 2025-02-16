@@ -2,9 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 
-import App from './App.jsx'
+import App from './Pages/App.jsx'
+import About from './Pages/Om.jsx'
+import Contact from './Pages/Kontakt.jsx'
+import Nopage from './Pages/NoPage.jsx'
 
-import Nopage from './NoPage'
 import NavBar from './Components/NavBar'
 import Footer from './Components/Footer'
 import Lines from './Components/BakgrunnLinjer.jsx'
@@ -34,14 +36,14 @@ const router = createBrowserRouter([
         path: '/',
         element: <App />,
       },
-      // {
-      //   path: '/om',
-      //   element: <About />,
-      // },
-      // {
-      //   path: '/kontakt',
-      //   element: <Contact />,
-      // },
+      {
+        path: '/om',
+        element: <About />,
+      },
+      {
+        path: '/kontakt',
+        element: <Contact />,
+      },
       // {
       //   path: '/galleri',
       //   element: <Galleri />,

@@ -2,8 +2,8 @@ import { motion } from "motion/react"
 import { Link } from "react-router-dom";
 
 
-const DURATION = 0.25;
-const STAGGER = 0.025;
+const DURATION = 0.2;
+const STAGGER = 0.02;
 const TextLink = ({ children, to }) => {
     return(
     <motion.span
@@ -11,7 +11,7 @@ const TextLink = ({ children, to }) => {
         whileHover="hovered"
         className="relative block overflow-hidden whitespace-nowrap cursor-pointer"
 
-        whileTap={{ scale: 0.9 }} 
+        whileTap={{ scale: 0.8 }} 
     >
         <Link to={to}>
             <span>

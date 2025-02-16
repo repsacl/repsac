@@ -1,8 +1,7 @@
 import { motion } from 'motion/react';
 
 
-const DURATION = .3
-const ReavelText = ({ children, className }) => {
+const ReavelText = ({ children, className, DURATION }) => {
   return(
     <motion.p
     initial={{ opacity: 0 }}
