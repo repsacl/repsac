@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import supabase from '../../supabase-client'
 
+import Card from './ToDoCard'
+import Btn from "./Button"
+
 import '../App.css'
 
 function ToDo() {
@@ -31,6 +34,11 @@ function ToDo() {
     const newTodoData = {
       name: newTodo,
       isCompleted: false
+    }
+
+    if (!newTodo){
+        alert("Please enter a task")
+        return
     }
 
     const { data, error } = await supabase
@@ -88,38 +96,27 @@ function ToDo() {
 
           <h1 className="text-5xl text-center">Todo List</h1>
 
-          <div className='flex justify-center'>
+          <div className='flex justify-center items-center'>
             <input
             type="text"
-            className="m-2 outline-none border-2 border-gray-500 p-1 rounded-lg focus:border-[#36b7ff]"
+            className="m-2 outline-none border-2 border-gray-500 p-1 rounded-lg focus:border-blue-700"
             placeholder="What to do?"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
             />
-            <button onClick={addTodo} className="p-1 rounded-lg bg-amber-100">Add Item</button>
+            <Btn onClick={addTodo} className={"hover:bg-white hover:text-black"}>Add Item</Btn>
 
           </div>
 
         <ul className='flex flex-wrap justify-center mt-5'>
           {todoList.map((todo) => (
             todo && (
-              <li key={todo.id} className='m-2 p-2 w-fit shadow-md rounded-lg'>
-                <p>{todo.name}</p>
-
-                <button
-                  onClick={() => CompleteTask(todo.id, todo.isCompleted)}
-                  className='p-1 m-2 rounded-lg'
-                >
-                  {todo.isCompleted ? "Undo" : "Complete Task"}
-                </button>
-
-                <button
-                  onClick={() => DeleteTask(todo.id)}
-                  className='p-1 m-2 rounded-lg'
-                >
-                  Delete Task
-                </button>
-              </li>
+              <Card
+                key={todo.id}
+                todo={todo}
+                CompleteTask={CompleteTask}
+                DeleteTask={DeleteTask}
+              />
             )
           ))}
         </ul>

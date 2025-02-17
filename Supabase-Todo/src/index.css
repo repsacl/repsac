@@ -14,31 +14,10 @@
 }
 
 
-a {
-  text-decoration: none;
-
-  transition: all 0.2s ease;
-}
-
-a:hover {
-  color: #36b7ff;
-}
-
 button {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-
-  border: none;
-  background: none;
   cursor: pointer;
 
-  background-color: #3583ad;
+  font-size: 1rem;
 
   transition: all 0.2s ease;
-}
-
-button:hover {
-  background-color: #235671;
 }

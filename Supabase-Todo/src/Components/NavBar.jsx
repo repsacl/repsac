@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 
+import BTN from './Button'
+
 function NavBar() {
 
   return (
@@ -11,8 +13,8 @@ function NavBar() {
             <Link to={"/"} className="absolute left-1/2 transform -translate-x-1/2">LOGO</Link>
 
             <ul className="flex md:space-x-6 space-x-4 md:text-lg text-sm font-medium md:px-6 px-1">
-                <Link to="/login"><button className="rounded p-1">LOGIN</button></Link>
-                <Link to="/signup"><button className="rounded p-1">SignUP</button></Link>
+                <Link to="/login"><BTN className={"bg-blue-700 border-blue-700 hover:bg-transparent"}>LOGIN</BTN></Link>
+                <Link to="/signup"><BTN className={"hover:bg-blue-700 border-blue-700"}>SIGNUP</BTN></Link>
             </ul>
         </nav>
 
