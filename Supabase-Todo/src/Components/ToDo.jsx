@@ -104,7 +104,7 @@ function ToDo() {
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
             />
-            <Btn onClick={addTodo} className={"hover:bg-white hover:text-black"}>Add Item</Btn>
+            <Btn onClick={addTodo} className={" shadow-md shadow-black hover:shadow-lg hover:bg-white hover:text-black"}>Add Item</Btn>
 
           </div>
 
