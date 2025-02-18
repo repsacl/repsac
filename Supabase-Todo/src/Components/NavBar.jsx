@@ -1,18 +1,22 @@
-// src/Components/NavBar.jsx
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from '../Hooks/auth';
 import supabase from '../../supabase-client';
 import BTN from './Button';
-import { useAuth } from '../Hooks/auth';
 
 function NavBar() {
   const { session } = useAuth();
+  const navigate = useNavigate();
 
   const signOut = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
       console.error('Error signing out:', error.message);
+    } else {
+      console.log("Signed out");
     }
-    // AuthProvider vil automatisk oppdatere session via onAuthStateChange
+
+    navigate("/");
   };
 
   return (
