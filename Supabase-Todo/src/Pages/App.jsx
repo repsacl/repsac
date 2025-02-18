@@ -1,22 +1,18 @@
-import { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
+// src/Pages/App.jsx
+import { Navigate } from 'react-router-dom';
+import ToDo from '../Components/ToDo';
+import { useAuth } from '../Hooks/auth';
 
-import supabase from '../../supabase-client'
-
-import ToDo from '../Components/ToDo'
-
-import '../App.css'
-
-import { useAuth } from '../Hooks/auth'
+import "../App.css"
 
 function App() {
-  const session = useAuth();
+  const { session } = useAuth();
 
   return (
     <>
-    {session ? <ToDo /> : <Navigate to="/login"/> }
+      {session ? <ToDo /> : <Navigate to="/login" replace />}
     </>
-  )
+  );
 }
 
 export default App;

@@ -9,6 +9,7 @@ import Nopage from './Pages/NoPage.jsx'
 
 import NavBar from './Components/NavBar'
 import Footer from './Components/Footer'
+import { AuthProvider } from './Hooks/auth'  // Importer AuthProvider
 
 import './index.css'
 
@@ -39,18 +40,17 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/signup",
+        path: '/signup',
         element: <SignUp />,
       },
     ],
   },
-
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
-    <RouterProvider router={router} />
-
-  </React.StrictMode>,
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
 )
