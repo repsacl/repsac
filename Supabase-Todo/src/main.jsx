@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 
 import App from './Pages/App.jsx'
 import ToDo from './Pages/ToDo.jsx'
-import User from './Pages/User.jsx'
+import Profile from './Pages/Profile.jsx'
 import Login from './Pages/Login.jsx'
 import SignUp from './Pages/SignUp.jsx'
 import Nopage from './Pages/NoPage.jsx'
@@ -44,8 +44,8 @@ const router = createBrowserRouter([
         element: <Wrapper><ToDo /></Wrapper>,
       },
       {
-        path: '/user',
-        element: <Wrapper><User/></Wrapper>
+        path: '/profile',
+        element: <Wrapper><Profile/></Wrapper>
       },
       {
         path: '/login',

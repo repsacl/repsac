@@ -38,14 +38,17 @@ function Login() {
 
   const GoogleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google'
+      provider: 'google',
+      options: {
+        redirectTo: `http://localhost:5173/todo`,
+      },
     });
 
     if (error) {
       console.error('Error logging in with Google:', error.message);
     }
     else{
-      <Navigate to="/todo" replace />
+      navigate("/todo");
     }
     // onAuthStateChange vil oppdatere session hvis login er vellykket
   };
@@ -56,7 +59,7 @@ function Login() {
 
   return (
     <div className="bg-cover bg-center bg-fixed">
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-200 flex justify-center items-center">
       <div className="bg-neutral-900 mx-4 p-8 rounded shadow-xl w-full md:w-1/2 lg:w-1/3">
 
 
@@ -100,8 +103,22 @@ function Login() {
 
           </div>
 
-          <button
-            className="mb-3 w-full max-w-xs font-bold shadow-sm rounded-lg py-3 border-1 border-solid border-blue-700 text-gray-200 flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-blue-700">
+          <div className="mb-6">
+          {message && <span>{message}</span>}
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Login
+            </button>
+
+          </div>
+        </form>
+
+        <button
+            className="mb-3 font-bold shadow-sm rounded-lg p-2 border-1 border-solid border-blue-700 text-gray-200 flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-blue-700"
+            onClick={GoogleLogin}
+          >
             <div className="bg-white p-2 rounded-full">
               <svg className="w-4" viewBox="0 0 533.5 544.3">
                 <path
@@ -123,18 +140,6 @@ function Login() {
               Sign Up with Google
               </span>
           </button>
-
-          <div className="mb-6">
-          {message && <span>{message}</span>}
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Login
-            </button>
-
-          </div>
-        </form>
 
 
       </div>

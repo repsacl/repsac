@@ -16,9 +16,12 @@ function ToDo() {
   }, [])
 
   const fetchTodos = async () => {
+    const { data: { user } } = await supabase.auth.getUser()
+
     const {data, error} = await supabase
       .from("TodoList")
       .select("*")
+      .eq("user_id", user.id)
 
     if (error){
       console.log('error fetching todos', error)
@@ -31,9 +34,12 @@ function ToDo() {
   }
 
   const addTodo = async () => {
+    const { data: { user } } = await supabase.auth.getUser()
+
     const newTodoData = {
       name: newTodo,
-      isCompleted: false
+      isCompleted: false,
+      user_id: user.id,
     }
 
     if (!newTodo){
@@ -59,10 +65,13 @@ function ToDo() {
 
 
   const CompleteTask = async (id, isComlete) => {
+    const { data: { user } } = await supabase.auth.getUser()
+
     const { data, error } = await supabase
       .from('TodoList')
       .update({ isCompleted: !isComlete })
       .eq("id",id)
+      .eq("user_id", user.id)
     
     if (error) {
       console.log('error toggling task', error)
@@ -75,10 +84,13 @@ function ToDo() {
   }
 
   const DeleteTask = async (id) => {
+    const { data: { user } } = await supabase.auth.getUser()
+
     const { data, error } = await supabase
       .from('TodoList')
       .delete()
       .eq("id", id)
+      .ep("user_id", user.id)
     
     if (error) {
       console.log('error deleting task', error)
