@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import ReavelText from '../Components/RevealText';
 
-import bakgrunn from "../../public/LogoFullLandbergBygg.png"
 
 function App() {
   return (
@@ -24,7 +23,7 @@ function App() {
             </Link>
           </ReavelText>
 
-          <ReavelText DURATION={1.15} className={"mt-5 text-sm md:text-lg"}><Link to="/om" className='underline-offset-5 text-gray-300 transition-all ease-in-out hover:text-blue-300 hover:underline'>Mer om Landberg bygg</Link></ReavelText>
+          <ReavelText DURATION={1.15} className={"mt-5 text-sm md:text-lg"}><Link to="/om" className='hover:underline-offset-5 text-gray-300 transition-all ease-in-out hover:text-blue-300 underline underline-offset-1'>Mer om Landberg bygg</Link></ReavelText>
         </div>
 
       </section>

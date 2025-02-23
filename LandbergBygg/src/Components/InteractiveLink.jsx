@@ -11,7 +11,7 @@ const TextLink = ({ children, to }) => {
         whileHover="hovered"
         className="relative block overflow-hidden whitespace-nowrap cursor-pointer"
 
-        whileTap={{ scale: 0.8 }} 
+        whileTap={{ scale: 0.8, color: "#36b7ff" }} 
     >
         <Link to={to}>
             <span>

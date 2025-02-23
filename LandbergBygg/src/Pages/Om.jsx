@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import RevealText from '../Components/RevealText';
 
 import '../App.css';
-//import backgroundImage from '../assets/landberg-bg.jpg'; // Sørg for at bildet er i riktig mappe
 
 function About() {
   return (
