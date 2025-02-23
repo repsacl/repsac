@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  base: "/todo-app/", // Ensure this matches your repository name
 })
