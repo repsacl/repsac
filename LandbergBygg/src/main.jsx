@@ -10,6 +10,7 @@ import Nopage from './Pages/NoPage.jsx'
 import NavBar from './Components/NavBar'
 import Footer from './Components/Footer'
 import Lines from './Components/BakgrunnLinjer.jsx'
+import Merke from './Components/Merke.jsx'
 
 import './index.css'
 
@@ -17,6 +18,7 @@ function Layout() {
   return (
     <>
       <NavBar />
+      <Merke />
       <Lines />
       <main className="flex-grow">
         <Outlet />

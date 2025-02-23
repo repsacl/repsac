@@ -1,24 +1,35 @@
-import { useState } from 'react'
+import { Link } from 'react-router-dom';
+import ReavelText from '../Components/RevealText';
 
-import ReavelText from '../Components/RevealText'
-import InteractiveText from '../Components/InteractiveText'
-
-import '../App.css'
-
+import bakgrunn from "../../public/LogoFullLandbergBygg.png"
 
 function App() {
-
   return (
     <>
-      <ReavelText className='text-center mt-20 md:text-6xl text-4xl uppercase' DURATION={.5}>LandbergBygg AS</ReavelText>
+      <section className="hero relative flex items-center justify-center h-screen bg-cover bg-center">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      <div className='flex justify-center items-center md:h-125 h-100'>
-        <ReavelText className='md:text-3xl text-lg md:w-200 w-100 text-center' DURATION={1}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptates consequuntur odio maxime, nihil, vitae accusantium quidem beatae recusandae deleniti aut necessitatibus nesciunt ut sunt. Nostrum repellat corporis vitae nemo?
-        </ReavelText>
-      </div>
+        <div className="relative text-center text-white px-4">
+          <ReavelText className={"text-5xl md:text-7xl font-bold mb-4 uppercase"} DURATION={.5}>Landberg Bygg AS</ReavelText>
+
+          <ReavelText DURATION={1.1}>
+            <p className="text-lg md:text-2xl mb-8">
+              Førsteklasses tømrerarbeid med tradisjonelt håndverk og moderne teknikker
+            </p>
+            <Link
+              to="/kontakt"
+              className="bg-blue-600 text-white font-semibold py-3 px-6 rounded shadow-md transition-all ease-in-out duration-300 hover:bg-blue-800"
+            >
+              Ta kontakt
+            </Link>
+          </ReavelText>
+
+          <ReavelText DURATION={1.15} className={"mt-5 text-sm md:text-lg"}><Link to="/om" className='underline-offset-5 text-gray-300 transition-all ease-in-out hover:text-blue-300 hover:underline'>Mer om Landberg bygg</Link></ReavelText>
+        </div>
+
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
