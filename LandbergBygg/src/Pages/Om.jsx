@@ -17,11 +17,11 @@ function About() {
         // }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <RevealText className={"relative text-white text-center text-4xl md:text-6xl uppercase font-bold"} DURATION={0.5}>
+        <RevealText className={"relative text-white text-center text-2xl md:text-6xl md:mb-15 mt-40 md:mt-15 mb-2 uppercase font-bold"} DURATION={0.5}>
           Om Landberg Bygg AS
         </RevealText>
 
-        <div className="relative w-11/12 md:w-3/4 bg-white bg-opacity-90 p-10 mb-20 mt-15 rounded-2xl shadow-xl">
+        <div className="relative w-9/10 md:w-3/4 bg-white bg-opacity-90 mb-15 p-10 md:mb-20 md:mt-15 rounded-2xl shadow-xl">
           <RevealText className={"md:text-2xl text-lg text-gray-800"} DURATION={1.1}>
             Hos <strong>Landberg Bygg AS</strong> er vi stolte av å tilby førsteklasses tømrerarbeid til våre kunder. Med flere års erfaring i bransjen og moderne løsninger, leverer vi skreddersydde løsninger som oppfyller dine behov og overgår dine forventninger.
             <br />

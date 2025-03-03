@@ -6,7 +6,7 @@ function NavBar() {
 
   return (
     <>
-        <nav className="flex items-center justify-between w-full p-4 border-b bg-rgb(240, 240, 240)">
+        <nav className="flex items-center justify-between w-full p-2 border-b bg-rgb(240, 240, 240)">
 
             <Link to={"/"} className="justify-start bg-gray-100 rounded-xl">
                 <img src="/LB_Logo.svg" alt="Logo" className="md:h-14 h-9 cursor-pointer m-0 transition-all ease-in hover:p-0.5" />
